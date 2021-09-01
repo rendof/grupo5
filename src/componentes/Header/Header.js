@@ -14,7 +14,7 @@ function Header() {
             </form>
         </section>
     
-      </div>
+      </div> 
     );
   }
 
