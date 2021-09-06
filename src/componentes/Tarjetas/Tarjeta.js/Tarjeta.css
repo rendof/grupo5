@@ -1,0 +1,17 @@
+.hide{
+    display: none;
+
+}
+.show{
+    display: block;
+}
+
+.image{
+    height: 100px;
+    width: 100px;
+
+}
+
+.ViewMore:hover{
+    cursor: pointer
+}
