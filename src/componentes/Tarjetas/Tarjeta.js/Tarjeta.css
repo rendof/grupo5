@@ -7,11 +7,22 @@
 }
 
 .image{
-    height: 100px;
-    width: 100px;
+    height: 100%;
+    width: 100%;
 
 }
 
 .ViewMore:hover{
     cursor: pointer
+}
+
+.TarjetaIndividual{
+   width: 20%;
+   padding: 10px;
+   margin-bottom: 15px;
+   margin-top: 15px;
+   background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
+   min-height: 620px;
 }

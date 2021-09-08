@@ -1,10 +1,11 @@
 import React from 'react'
+import './Header.css'
 function Header() {
     return (
-      <div>
+      <div className='HeaderGral'>
         
-        <h1>Título/ Nombre de la app</h1>
-        <section>
+        <h1 className='titulo'>APP DE GRUPO 5 </h1>
+        <section className='SubHeader'>
             <p>Ordenar ASC/ DESC</p>
             <i className="fas fa-th"></i>
             <i className="fas fa-align-justify"></i>

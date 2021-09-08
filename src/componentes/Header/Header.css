@@ -1,0 +1,16 @@
+.HeaderGral{
+    display: flex;
+    background-color: green;
+    justify-content: space-between;
+}
+.SubHeader{
+    display: flex;
+    padding: 19px;
+    width: 25%;
+    justify-content: space-between;
+}
+
+.titulo{
+    padding-left: 25px;
+}
+

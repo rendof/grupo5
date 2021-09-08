@@ -1,5 +1,6 @@
 import React,{Component} from 'react' //componente con estado 
 import Tarjeta from './Tarjeta.js/Tarjeta'
+import './Tarjetas.css'
 
 
 //en un componente con estado podes desarollar funciones (modulos)
@@ -41,7 +42,7 @@ class Tarjetas extends Component{   // con estado usas una lclass en vez de una 
 
         // react fragments <> </> contiene info sin alterarla (podes contener dos div o ams)
         return(
-              <div>
+              <div className='TarjetasGeneral'>
                   {this.state.populares.map(popular=>( // el map es comom un for que usamos para recorrer cada array de pelis con info
                       <Tarjeta
                       key={popular.id}

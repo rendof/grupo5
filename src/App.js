@@ -5,7 +5,7 @@ import Tarjetas from "./componentes/Tarjetas/Tarjetas";
 function App() {
   let autos= "bora" // para llamar esto en tarjetas uso props
   return (
-    <div>
+    <div className='main'>
       <Header/>
        <Tarjetas auto={autos} />   {/*PROPS*/}
       
