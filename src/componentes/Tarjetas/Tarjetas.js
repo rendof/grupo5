@@ -48,6 +48,14 @@ class Tarjetas extends Component{   // con estado usas una lclass en vez de una 
         })
     }
 
+    borrar(id){
+        let crearse = this.state.populares.filter(filtrar => filtrar.id!==id )
+        this.setState({
+            populares: crearse
+        })
+
+    }
+
 
     
     // el render es lo importante para que se vea todo 
@@ -64,6 +72,7 @@ class Tarjetas extends Component{   // con estado usas una lclass en vez de una 
                       <Tarjeta
                       key={popular.id}
                       info={popular}
+                      borrar={(id)=>this.borrar(id)}
                        />
                   ))}
 
