@@ -9,19 +9,22 @@ class Tarjetas extends Component{   // con estado usas una lclass en vez de una 
     constructor(props){  //estos son modulos
         super(props) // es algo propio de react que no sabemos bien
         this.state={
-            populares:[]
+            populares:[],
+            pagina: 1
             
           
         }
     }
 
     componentDidMount(){ //se activa solo cuando corres el codigo por primera vez, (npm start)
-        fetch('https://api.themoviedb.org/3/movie/popular?api_key=a2dde4b6bf0d0c668a820209ab9fd035&language=en-US&page=1')
+        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=a2dde4b6bf0d0c668a820209ab9fd035&language=en-US&page=${this.state.pagina}`)
         .then(resultado=> resultado.json())
         .then(popular=>{
             //console.log(populares)
             this.setState({
-                populares:popular.results
+                populares:popular.results,
+                pagina: this.state.pagina +1 
+        
             })
             //console.log(this.state.populares)
         })
@@ -31,7 +34,19 @@ class Tarjetas extends Component{   // con estado usas una lclass en vez de una 
     componentDidUpdate(){ //se activa cuando actualizas el codigo 
 
     }
-
+    agregar(){
+        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=a2dde4b6bf0d0c668a820209ab9fd035&language=en-US&page=${this.state.pagina}`)
+        .then(resultado=> resultado.json())
+        .then(popular=>{
+            //console.log(populares)
+            this.setState({
+                populares: this.state.populares.concat(popular.results), //concat es una union entre un array con contenido nuevo y lo tira al final. La nueva info es un nuevo array.
+                pagina: this.state.pagina +1
+        
+            })
+            //console.log(this.state.populares)
+        })
+    }
 
 
     
@@ -41,8 +56,10 @@ class Tarjetas extends Component{   // con estado usas una lclass en vez de una 
         
 
         // react fragments <> </> contiene info sin alterarla (podes contener dos div o ams)
-        return(
-              <div className='TarjetasGeneral'>
+        return( 
+                <>
+                <button onClick = {() => this.agregar()}>Agregar Mas</button>
+                <div className='TarjetasGeneral'>
                   {this.state.populares.map(popular=>( // el map es comom un for que usamos para recorrer cada array de pelis con info
                       <Tarjeta
                       key={popular.id}
@@ -51,6 +68,7 @@ class Tarjetas extends Component{   // con estado usas una lclass en vez de una 
                   ))}
 
               </div>
+              </>
         )
     }
 }
