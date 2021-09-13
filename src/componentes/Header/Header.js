@@ -4,7 +4,7 @@ function Header() {
     return (
       <div className='HeaderGral'>
         
-        <h1 className='titulo'>APP DE GRUPO 5 </h1>
+        <h1 className='titulo'>ChillingTime </h1>
         <section className='SubHeader'>
             <p>Ordenar ASC/ DESC</p>
             <i className="fas fa-th"></i>
