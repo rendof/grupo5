@@ -1,11 +1,18 @@
 .TarjetasGeneral{
-    background-color: gray;
+    background-color:black;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: flex-start;
-    
+}
 
-    
+.agregarbtn{
+ width: 100%;
+ background-color: grey;
+
+}
+
+.agregarbtn:hover{
+    background-color: lightgray;
 }

@@ -5,7 +5,7 @@ class Tarjeta extends Component {
       super()
       this.state={
         viewMore: false, //cuando recien abris la pagina, va a estar en falso
-        text: "Ver Mas", //opcion de ver mas
+        text: "➕", //opcion de ver mas
       }
       
     }
@@ -13,12 +13,12 @@ class Tarjeta extends Component {
       if(this.state.viewMore){
         this.setState({
           viewMore:false,
-          text:"Ver Mas",
+          text:"➕",
         })
       }else{      
       this.setState({
         viewMore:true,
-        text:"Ver Menos", 
+        text:"➖", 
       })}
     }
 
@@ -27,14 +27,14 @@ class Tarjeta extends Component {
       return ( //se trabaja en JSX
       
         <div className='TarjetaIndividual'>
-          <p onClick={()=>this.props.borrar(id)}> Borrar </p>
             <img className= "image" src={`https://image.tmdb.org/t/p/original${poster_path}`} alt="" />
            <h1>{title}</h1>
            <ul className= {`${this.state.viewMore ? "show" : "hide"}`}>  {/*if ternario, si es falso, se oculta y si es true te da show*/}
            <p>{overview}</p>
-           <p>popularity: {popularity}</p></ul>
-      <p className = "ViewMore" onClick = {() => this.VerMas()}>{this.state.text}</p> {/*esta funcion cambia el estado. Ver mas es un modulo.*/}
-      
+           <p></p>
+           <p>Popularity: {popularity}</p></ul>
+      <button className = "ViewMore" onClick = {() => this.VerMas()}>{this.state.text}</button> {/*esta funcion cambia el estado. Ver mas es un modulo.*/}
+      <button className = "Borrar" onClick={()=>this.props.borrar(id)}> 🗑 </button>
         </div> 
         
 
