@@ -7,6 +7,10 @@
     align-items: flex-start;
 }
 
+.Vertical{
+    width: 100%;
+    }
+
 .agregarbtn{
  width: 100%;
  background-color: grey;

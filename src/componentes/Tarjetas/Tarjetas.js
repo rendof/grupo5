@@ -13,7 +13,7 @@ class Tarjetas extends Component{   // con estado usas una lclass en vez de una 
             populares:[],
             pagina: 1,
             actuales: [],
-            
+            lista: "Horizontal",
           
         }
     }
@@ -66,6 +66,17 @@ class Tarjetas extends Component{   // con estado usas una lclass en vez de una 
             populares: peliculasFiltradas 
         })
     }
+
+    Vertical(){
+        this.setState({
+           lista: "Vertical"
+       })
+    }
+    Horizontal(){
+        this.setState({
+            lista: "Horizontal"
+        })
+    }
     
     // el render es lo importante para que se vea todo 
     render(){ //estos son modulos
@@ -75,14 +86,18 @@ class Tarjetas extends Component{   // con estado usas una lclass en vez de una 
         // react fragments <> </> contiene info sin alterarla (podes contener dos div o ams)
         return( 
                 <>
-                <Header Buscar={(texto)=> this.Buscar(texto) }/>
+                <Header Buscar={(texto)=> this.Buscar(texto) }
+                Vertical= {()=> this.Vertical() }
+                Horizontal= {()=> this.Horizontal() }
+                />  
                 <button className='agregarbtn' onClick = {() => this.agregar()}>Agregar Mas</button>
-                <div className='TarjetasGeneral'>
+                <div className= {`${this.state.lista== "Horizontal" ?"TarjetasGeneral" :"Vertical" }`}>
                   {this.state.populares.map(popular=>( // el map es comom un for que usamos para recorrer cada array de pelis con info
                       <Tarjeta
                       key={popular.id}
                       info={popular}
                       borrar={(id)=>this.borrar(id)}
+                      orientacion= {this.state.lista}
                        />
                   ))}
 
