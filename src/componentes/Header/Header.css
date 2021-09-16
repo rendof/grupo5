@@ -12,8 +12,11 @@
 
 .titulo{
     padding-left: 50px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;  
+    }
+
+.titulo a{
+    color: black;
 }
 
 .orientacion:hover{

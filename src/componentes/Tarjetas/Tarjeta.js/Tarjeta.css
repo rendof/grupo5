@@ -36,5 +36,11 @@
 }
 
 .vertical{
-    width: 100%;
+    width:100%;
+    margin:10px 0;
+    background-color:rgba(57, 55, 63, 0.445);
+    border-radius: 10px;
+    overflow:hidden;
+    
 }
+
