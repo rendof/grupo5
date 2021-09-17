@@ -91,7 +91,7 @@ class Tarjetas extends Component{   // con estado usas una lclass en vez de una 
                 Horizontal= {()=> this.Horizontal() }
                 />  
                 <button className='agregarbtn' onClick = {() => this.agregar()}>Agregar Mas</button>
-                <div className= {`${this.state.lista== "Horizontal" ?"TarjetasGeneral" :"Vertical" }`}>
+                <div className= {`${this.state.lista== "Horizontal" ?"TarjetasGeneral" :"alolargo" }`}>
                   {this.state.populares.map(popular=>( // el map es comom un for que usamos para recorrer cada array de pelis con info
                       <Tarjeta
                       key={popular.id}

@@ -7,13 +7,17 @@
     align-items: flex-start;
 }
 
-.Vertical{
-    width: 80%;
+.alolargo{
+
+background-color: black;
+margin: 0px;
+
     }
 
 .agregarbtn{
  width: 100%;
  background-color: grey;
+ margin: 0px;
 
 }
 

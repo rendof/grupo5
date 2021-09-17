@@ -1,0 +1,9 @@
+.Main{
+    margin: 0px;
+    background-color: gray;
+    display: flex;
+    padding: 15px;
+    justify-content: space-around;
+    
+
+}

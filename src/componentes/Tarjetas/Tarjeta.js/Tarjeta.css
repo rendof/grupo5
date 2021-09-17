@@ -4,6 +4,7 @@
 }
 .show{
     display: block;
+    width: 80%;
 }
 
 .image{
@@ -11,10 +12,26 @@
     width: 100%;
 
 }
+.image2{
+    height: 20%;
+    width: 20%;
+    padding: 10px;
+}
 
 
 .ViewMore{
     background-color: lightgreen;
+    height: 20px;
+    margin-top: 10px;
+}
+.Borrar:hover{
+    cursor: pointer;
+}
+.Borrar{
+    height: 20px;
+    margin-top: 10px;
+    margin-right: 15px;
+   
 }
 .ViewMore:hover{
     cursor: pointer;    
@@ -38,9 +55,15 @@
 .vertical{
     width:100%;
     margin:10px 0;
-    background-color:rgba(57, 55, 63, 0.445);
+    background-color:grey;
     border-radius: 10px;
     overflow:hidden;
+    display: flex;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+
     
 }
+
 
