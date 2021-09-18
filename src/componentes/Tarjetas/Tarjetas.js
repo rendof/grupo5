@@ -69,11 +69,11 @@ class Tarjetas extends Component{   // con estado usas una class en vez de una f
          this.setState({
             populares: peliculasFiltradas 
         })
-    }
+    } //actuales tiene toda la info de las pelis pero se muestran las populares. El filter filtra pelis por el titulo, que incluya la letra que vos tipieas en el buscador. 
 
     Vertical(){
         this.setState({
-           lista: "Vertical"
+           lista: "Vertical"  //declara el estado lista, en el origen esta en horizontal
        })
     }
     Horizontal(){
@@ -109,6 +109,7 @@ class Tarjetas extends Component{   // con estado usas una class en vez de una f
               </>
         )
     }
-}
+}  // si es true, usa la clase tarjeta general y si es false usa a lo largo. 
+// R.Fragment --> si lo saco, header, button , div estan todos en la misma categoria de importancia, y jsx no permite que haya mas de un elemento con la misma importancia. R.F funciona como padre sin alterar el estado de lo de adentro. 
 
 export default Tarjetas

@@ -16,6 +16,6 @@ function Header(props) { //Componente sin estado, no puede alterar une stado int
     
       </div> 
     );
-  }
+  } //Header patea vertical y horizontal a tarjetas via props porque no tiene componente con estado. 
 
   export default Header; 
