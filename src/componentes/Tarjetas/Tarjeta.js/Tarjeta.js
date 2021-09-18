@@ -23,7 +23,7 @@ class Tarjeta extends Component {
     }
 
     render(){ //modulo que permite que las cosas se exporte, trabaja en JSX, pero por fuera en JS
-      let {title, overview, poster_path, popularity, id} = this.props.info
+      let {title, overview, poster_path, popularity, id} = this.props.info //DESTRUCTURING par simplificar el this.props.info.title pasarlo a title
       return ( //se trabaja en JSX
       
         <div className={`${this.props.orientacion== "Horizontal" ?"TarjetaIndividual" :"vertical" }`}>
@@ -34,13 +34,13 @@ class Tarjeta extends Component {
            <p></p>
            <p>Popularity: {popularity}</p></ul>
       <button className = "ViewMore" onClick = {() => this.VerMas()}>{this.state.text}</button> {/*esta funcion cambia el estado. Ver mas es un modulo.*/}
-      <button className = "Borrar" onClick={()=>this.props.borrar(id)}> 🗑 </button>
+      <button className = "Borrar" onClick={()=>this.props.borrar(id)}> 🗑 </button> {/* el this.props */}
         </div> 
         
 
       );
     }
-   //esto es un destructuring
+   
     
   }
 

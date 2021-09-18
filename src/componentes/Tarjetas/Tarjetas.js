@@ -1,14 +1,17 @@
-import React,{Component} from 'react' //componente con estado 
+import React,{Component} from 'react' //componente con estado (compomnent) es el primer paso para crear un componente con estado va entre{} para que exista un destructuring
 import Tarjeta from './Tarjeta.js/Tarjeta'
 import './Tarjetas.css'
 import Header from "../Header/Header"
 
+// el destructuring se hace unicamente para evir tener uqe poner react.componet (eliminar el llamamiento de react)
+
 
 //en un componente con estado podes desarollar funciones (modulos)
 
-class Tarjetas extends Component{   // con estado usas una lclass en vez de una function
-    constructor(props){  //estos son modulos
-        super(props) // es algo propio de react que no sabemos bien
+class Tarjetas extends Component{   // con estado usas una class en vez de una function
+    constructor(){  //estos son modulos
+        super() // es algo propio de react que no sabemos bien
+        // constructos, super y this es lo que permite que funcionen los componentes
         this.state={
             populares:[],
             pagina: 1,
@@ -16,14 +19,15 @@ class Tarjetas extends Component{   // con estado usas una lclass en vez de una 
             lista: "Horizontal",
           
         }
+        //this.state es donde declaras este estado dentro del componente
     }
 
     componentDidMount(){ //se activa solo cuando corres el codigo por primera vez, (npm start)
-        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=a2dde4b6bf0d0c668a820209ab9fd035&language=en-US&page=${this.state.pagina}`)
+        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=a2dde4b6bf0d0c668a820209ab9fd035&language=en-US&page=${this.state.pagina}`) //el this hace referencia al componente. el state hace referencia a los estados dentro del componente. Pagina hace refrencia al estado pagina 
         .then(resultado=> resultado.json())
         .then(popular=>{
             //console.log(populares)
-            this.setState({
+            this.setState({  //con esta caracteristica podemos alterar los valores del estado
                 populares:popular.results,
                 pagina: this.state.pagina +1
         
@@ -53,9 +57,9 @@ class Tarjetas extends Component{   // con estado usas una lclass en vez de una 
     }
 
     borrar(id){
-        let crearse = this.state.populares.filter(filtrar => filtrar.id!==id )
+        let crearse = this.state.populares.filter(filtrar => filtrar.id!==id ) //filtrar todas las peliculas por su id y separar toda aquella que el id = al id que tenes de apretar el boton (en realidad lo saca del array, se puede recuperar si quisieramos)
         this.setState({
-            populares: crearse
+            populares: crearse //ahora rre escribime populares con la nueva info filtrada 
         })
 
     }
@@ -86,7 +90,7 @@ class Tarjetas extends Component{   // con estado usas una lclass en vez de una 
         // react fragments <> </> contiene info sin alterarla (podes contener dos div o ams)
         return( 
                 <>
-                <Header Buscar={(texto)=> this.Buscar(texto) }
+                <Header Buscar={(texto)=> this.Buscar(texto) } // aca recive la info de lo que escribio el usuario y si puede hacer una funcion y trabajar ocn este texto
                 Vertical= {()=> this.Vertical() }
                 Horizontal= {()=> this.Horizontal() }
                 />  
@@ -96,7 +100,7 @@ class Tarjetas extends Component{   // con estado usas una lclass en vez de una 
                       <Tarjeta
                       key={popular.id}
                       info={popular}
-                      borrar={(id)=>this.borrar(id)}
+                      borrar={(id)=>this.borrar(id)} //en tarjetas cunado apretas el boton te lleva aca
                       orientacion= {this.state.lista}
                        />
                   ))}
