@@ -1,12 +1,12 @@
 import React from "react";
 import Tarjetas from "./componentes/Tarjetas/Tarjetas";
-import Footer from "./componentes/Footer/Footer"/* Aca importo los componentes*/
+import Footer from "./componentes/Footer/Footer"
 
 function App() {
  
   return (
     <div className='main'>
-       <Tarjetas/>   {/* Aca estoy llamando a los componentes*/}
+       <Tarjetas/>   
        <Footer/>
       
       
@@ -14,4 +14,4 @@ function App() {
   );
 }
 
-export default App; /* aca estamso exportando directo a la pagina al html principal*/ 
+export default App; 

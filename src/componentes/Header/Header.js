@@ -2,7 +2,7 @@ import React from 'react'
 import './Header.css'
 import Buscador from "../Buscador/Buscador"
 
-function Header(props) { //Componente sin estado, no puede alterar une stado interno 
+function Header(props) { 
     return (
       <div className='HeaderGral'>
         
@@ -11,11 +11,11 @@ function Header(props) { //Componente sin estado, no puede alterar une stado int
             
             <i className="orientacion" onClick = {()=>props.Vertical()} ><i className="fas fa-align-justify" ></i></i> 
             <i className="orientacion"onClick = {()=>props.Horizontal()}><i className="fas fa-th"></i></i>
-            <Buscador Buscar = { (texto)=> props.Buscar(texto) }/> {/*aca llamas un componente hijo (Buscador) y envias informacion a un componente padre (Tarjetas)*/}
+            <Buscador Buscar = { (texto)=> props.Buscar(texto) }/> 
         </section>
     
       </div> 
     );
-  } //Header patea vertical y horizontal a tarjetas via props porque no tiene componente con estado. 
+  } 
 
   export default Header; 
